@@ -15,10 +15,10 @@ class App extends Component {
     if(token){
       //console.log('token:', token);
       this.props.setTokens(params);
-      this.props.loadUserDetails(params);
+      this.props.loadUserDetails(token);
       this.props.getTopTracks(token);
     }
-    console.log(params);
+    //console.log(params);
   }
 
   getHashParams() {
@@ -36,22 +36,14 @@ class App extends Component {
     const {tokens} = this.props;
     const{access_token} = tokens;
 
-    if(access_token) {
+    
       return (
         <div>
-          <div className="trialImg"></div>
           <UserDetails/>
           <DisplayTopTracks/>
         </div>
         );
-    }
-    else {
-      return (
-        <div className="App">
-          <a href='http://localhost:8888' > Login to Spotify </a>
-        </div>
-      );
-    }
+    
   }
 }
 

@@ -7,15 +7,17 @@ class RecommendationsDisplay extends Component {
 	  		console.log("recommendations display:", this.props.recommendations);
 	  		const {recommendations} = this.props;
 	  		const {loading, recommendedTracks} = recommendations;
-			
 			if(loading) 
-				return( <Loading delay={200} type='spin' color='#222' className='loading' />);
+				return( <div className='loaderSpinner'>
+					<Loading delay={200} type='spin' color='#222' />
+					</div>);
 			else{
 				return (recommendedTracks && recommendedTracks.tracks)? 
-				(<div>
-					<ul>
-					{recommendedTracks.tracks.map((track)=>
-							<li>{track.name} by {track.artists.map((a)=>a.name)}</li>
+				(<div className="listHolder">
+					
+					<ul className="ulClassRecos">
+					{recommendedTracks.tracks.map((track, i)=>
+							<li key={i} className="trackList">{track.name} by {track.artists.map((a)=>a.name)}</li>
 						)}
 					</ul>
 				</div>): 

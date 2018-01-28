@@ -30,7 +30,8 @@ div.Login {
   background-size: 300px 100px; 
 }
 .userInfoContainer{
-  margin-left: 2.5%;
+    margin-top: 80px;
+    margin-left: 200px;
 }
 
 .userInfoLabels{
@@ -45,16 +46,20 @@ div.Login {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width:100px;
+    height:100px;
+    padding-bottom: 17px;
 }
 .checkClass {
   background: red;
 }
 
 .mediumButton{
-  width:200px;
-  height:50px;
+  width: 20%;
+  height: 50px;
   border-radius: 8px;
   font-size: 10pt;
+  margin-left: 40%;
 }
 
 .disableRecomendationButton{
@@ -77,19 +82,13 @@ div.Login {
 
 input[type='checkbox'] {
     -webkit-appearance:none;
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
     background:transparent;
 }
 input[type='checkbox']:checked {
-    background: url('./images/spotify.png') no-repeat;
-    background-size: 30px;
-}
-.trialImg{
-    background: url('./images/spotify.png') no-repeat;
-    background-size: 30px;
-    height: 50px;
-    width: 30px;
+    background: url('./images/check.png') no-repeat;
+    background-size: 40px;
 }
 
 .overlay {
@@ -123,4 +122,90 @@ input[type='checkbox']:checked {
     background-color: transparent;
     border: none;
     color: gray;
+}
+
+.loaderSpinner {
+    color: red;
+    padding-left: 40%;
+    padding-top:20%;
+    width: 300px;
+    position: relative;
+
+}
+.trackList {
+  margin:1px;
+  padding:9px;
+  background: #9e9e9e42;
+}
+
+.listHolder {
+  margin-top:7px;
+}
+.ulClassRecos {
+    list-style-type: none;
+    padding: 0;
+}
+.headerRecos{
+  margin-top:7px;
+}
+.recommendationHeader{
+  text-align: center;;
+}
+
+.accountBoxContainer{
+  float: left;
+}
+.userInfo {
+  margin: 16px;
+}
+.userDetailHeader {
+    margin-left: 26px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.icon-react {
+  background: url('./images/react-globe.png') no-repeat;
+  background-size: 500px;
+  width:500px;
+  height:500px;
+}
+.icon-spotify{
+  background: url('./images/spotify2.png') no-repeat;
+  background-size: 500px;
+    width:500px;
+    height:500px;
+}
+
+.icon-redux{
+  background: url('./images/redux-logo.png') no-repeat;
+  background-size: 500px;
+  width:500px;
+  height:500px;
+}
+
+.iconTable{
+  width: 100%;
+}
+
+.iconTable td{
+  align: center;
+}
+
+.getStarted{
+  text-align: center;
+  font-size:30pt; 
+}
+
+.icon-spin {
+    -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
 }

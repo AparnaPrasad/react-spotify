@@ -37,7 +37,7 @@ class DisplayTopTracks extends Component {
 		}
 
 	getRecommendation() {
-		console.log("At get recommendation!");
+		//console.log("At get recommendation!");
 		let trackSeeds=[];
 		let artistsSeeds=[];
 
@@ -65,6 +65,14 @@ class DisplayTopTracks extends Component {
 		})
 
 	}
+
+	cropName(name, chars){
+		console.log('name', name.length);
+		if(name.length>chars){
+			return name.substring(0, chars).concat('...');
+		}
+		return name;
+	}
 	
 	render() {
 		const {userTopTracks} = this.props;
@@ -79,14 +87,14 @@ class DisplayTopTracks extends Component {
 		  	if(trackIds && tracksById){
 		  		return (
 		  			<div>
-			  			<h3>Select Items to get recommendation</h3>{this.state.enableRecomendationButton}
+			  			<h3 className="recommendationHeader">Select Items to get recommendation</h3>{this.state.enableRecomendationButton}
 			  			<button onClick={()=>{this.getRecommendation()}} className={this.state.enableRecomendationButton?'enableRecomendationButton mediumButton':'disableRecomendationButton mediumButton'}>Get Recommendations</button>
 			  			<div className="grid-container">
 			  				{trackIds.map((x)=>
 				  					<div key={x} className="grid-item" onClick={(e)=>this.trackClicked(e, x, tracksById[x].name)}>
-					  					<h3>{tracksById[x].name}</h3>
+					  					<h3>{this.cropName(tracksById[x].name, 30)}</h3>
 					  					<div><img className="albumImage" src={tracksById[x].album.images[2].url} alt='../../public/favicon.ico'/></div>
-					  					<div>Album:{tracksById[x].album.name} </div>
+					  					<div>Album:{this.cropName(tracksById[x].album.name, 35)} </div>
 					  					<div>Artist: {tracksById[x].artists.map((art)=> <span key={art.id}>{art.name},</span>)}</div>
 				  						<input id={x} type="checkbox" />
 				  					</div>
@@ -100,9 +108,11 @@ class DisplayTopTracks extends Component {
 		        		onRequestClose={()=>this.closeRecommendationsViewModal()}
 		        		contentLabel='Modal'
 		        		ariaHideApp={false}>
-		        			<button className="closeButton" onClick={()=>this.closeRecommendationsViewModal()}>
+		        		<button className="closeButton" onClick={()=>this.closeRecommendationsViewModal()}>
  								<CloseButton size={30}/>
-        					</button>
+        				</button>
+		        		<h3 className="headerRecos">Recommendation List based on seeds</h3>
+		        		
           					{isShowRecommendationsViewOpen && <RecommendationsDisplay />}
         				</Modal>
 			  			</div>

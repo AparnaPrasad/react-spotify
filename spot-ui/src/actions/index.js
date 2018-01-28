@@ -13,7 +13,7 @@ function fetchUserDetails(token){
 
     console.log('fetch use details token:', token);
     
-    return fetch("https://api.spotify.com/v1/me", {method: "GET", headers: {'Authorization': 'Bearer '+token.access_token}})
+    return fetch("https://api.spotify.com/v1/me", {method: "GET", headers: {'Authorization': 'Bearer '+token}})
       .then((resp) => {
         return resp.json().then((data) => {
           return data;
