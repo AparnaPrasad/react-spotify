@@ -23,11 +23,13 @@ Here is how you can load the application onto your local machine:
 3. First you need to run the server:
 
     i. cd spotify-backend/authorization-code/
+    
     ii. node app
 
 4. To start the react app or UI:
 
     i. cd spot-ui
+    
     ii. npm start / npm run start
 
 5. Open http:localhost:8888 on the browser. 
