@@ -14,3 +14,22 @@ The code is split in two modules: UI and Backend.
 <b>The Backend</b> takes care of redirecting to Spotify login and return access tokens to the UI.
 
 
+Here is how you can load the application onto your local machine:
+
+1. First, install node.js if you do not have it yet. It comes with npm(node package manage). Make sure that you install node with the PATH variable so you can run node anywhere in your command prompt/terminal.
+
+2. Clone or download this repository available at: https://github.com/AparnaPrasad/react-spotify. 
+
+3. First you need to run the server:
+
+    i. cd spotify-backend/authorization-code/
+    ii. node app
+
+4. To start the react app or UI:
+
+    i. cd spot-ui
+    ii. npm start / npm run start
+
+5. Open http:localhost:8888 on the browser. 
+
+Note: This project requires npm > 6.0
