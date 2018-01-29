@@ -87,15 +87,17 @@ class DisplayTopTracks extends Component {
 		  	if(trackIds && tracksById){
 		  		return (
 		  			<div>
-			  			<h3 className="recommendationHeader">Select Items to get recommendation</h3>{this.state.enableRecomendationButton}
+			  			<h3 className="recommendationHeader">Select tracks to get recommendation</h3>{this.state.enableRecomendationButton}
 			  			<button onClick={()=>{this.getRecommendation()}} className={this.state.enableRecomendationButton?'enableRecomendationButton mediumButton':'disableRecomendationButton mediumButton'}>Get Recommendations</button>
 			  			<div className="grid-container">
 			  				{trackIds.map((x)=>
 				  					<div key={x} className="grid-item" onClick={(e)=>this.trackClicked(e, x, tracksById[x].name)}>
 					  					<h3>{this.cropName(tracksById[x].name, 30)}</h3>
 					  					<div><img className="albumImage" src={tracksById[x].album.images[2].url} alt='../../public/favicon.ico'/></div>
-					  					<div>Album:{this.cropName(tracksById[x].album.name, 35)} </div>
-					  					<div>Artist: {tracksById[x].artists.map((art)=> <span key={art.id}>{art.name},</span>)}</div>
+					  					<div><b>Album: </b>{this.cropName(tracksById[x].album.name, 35)} </div>
+					  					<div><b>Artist: </b> {tracksById[x].artists.map((art, i)=> <span key={art.id}>
+					  					{i==tracksById[x].artists.length-1?art.name:art.name+', '}
+					  					</span>)}</div>
 				  						<input id={x} type="checkbox" />
 				  					</div>
 			  					)
@@ -111,7 +113,7 @@ class DisplayTopTracks extends Component {
 		        		<button className="closeButton" onClick={()=>this.closeRecommendationsViewModal()}>
  								<CloseButton size={30}/>
         				</button>
-		        		<h3 className="headerRecos">Recommendation List based on seeds</h3>
+		        		<h3 className="headerRecos">Recommendation list based on selected tracks</h3>
 		        		
           					{isShowRecommendationsViewOpen && <RecommendationsDisplay />}
         				</Modal>

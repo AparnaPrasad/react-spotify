@@ -18,7 +18,24 @@
       }
       .alignButton{
         position: relative;
-        left:40%;
+        left: 41%;
+        width: 20%;
+        margin-top: 20px;
+        color: black;
+        background-color: #6fd862;
+        font-weight: bold;
+        border: none;
+      }
+      .alignButton:hover{
+        background-color: #6fd862a3;
+      }
+      .loginLogo{
+        background: url(./images/spotify.png) no-repeat;
+        background-size: 100px;
+        width: 100px;
+        height: 100px;
+        left: 47%;
+        position: relative;
       }
     </style>
   </head>
@@ -26,8 +43,11 @@
   <body>
     <div class="container">
       <div id="login">
+        <div class="loginLogo">
+          
+        </div>
         <h1 class="loginText">Log in to spotify account</h1>
-        <a href="/login" class="btn btn-primary alignButton">Log in with Spotify</a>
+        <a href="/login" class="btn btn-primary alignButton">Log in</a>
       </div>
       <div id="loggedin">
         <div id="user-profile">

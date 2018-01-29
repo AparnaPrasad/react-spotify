@@ -36,15 +36,22 @@ class App extends Component {
     const {tokens} = this.props;
     const{access_token} = tokens;
 
-    
+    if(access_token)
+    {
       return (
         <div>
           <UserDetails/>
           <DisplayTopTracks/>
         </div>
         );
-    
+    }
+    else {
+     return( <div>
+        Please login to <a href="http://localhost:8888/">http://localhost:8888</a>
+     </div>)
+    }
   }
+    
 }
 
 function mapStateToProps({tokens, userInfo}) {
