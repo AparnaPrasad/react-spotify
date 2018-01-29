@@ -7,6 +7,8 @@ Also, see recommendations based on a set of selected tracks.
 This project is developed using react-redux, node js.This projects demonstrates the understanding of the Redux library 
 and how to better manage application state by deciding when to use data from Component State or Redux Store.
 
+![alt text](http://g.recordit.co/GHcZekL72Y.gif)
+
 The code is split in two modules: UI and Backend. 
 
 <b>The User Interface</b> consists of an interactive web page to browse and select tracks to view recommendation.
