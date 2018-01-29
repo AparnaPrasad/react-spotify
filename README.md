@@ -8,7 +8,9 @@ This project is developed using react-redux, node js.This projects demonstrates 
 and how to better manage application state by deciding when to use data from Component State or Redux Store.
 
 The code is split in two modules: UI and Backend. 
+
 <b>The User Interface</b> consists of an interactive web page to browse and select tracks to view recommendation.
+
 <b>The Backend</b> takes care of redirecting to Spotify login and return access tokens to the UI.
 
 
