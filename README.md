@@ -34,4 +34,4 @@ Here is how you can load the application onto your local machine:
 
 5. Open http:localhost:8888 on the browser. 
 
-Note: This project requires npm > 6.0
+<b>Note: This project requires npm > 6.0</b>
